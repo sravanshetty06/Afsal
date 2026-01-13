@@ -1,0 +1,19 @@
+# Render manifest - edit `repository` to point to your GitHub repo and then push to GitHub.
+# See https://render.com/docs/deploying-with-a-render-yaml for details.
+
+services:
+  - type: web_service
+    name: Absal Web
+    repository: https://github.com/<your-github-username>/<your-repo>
+    branch: main
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
+    startCommand: gunicorn Absal.wsgi --bind 0.0.0.0:$PORT
+    autoDeploy: true
+
+databases:
+  - name: absal-db
+    plan: starter
+    engine: postgres
+    # The DB will be created by Render; its connection string will be available as an env var DATABASE_URL
