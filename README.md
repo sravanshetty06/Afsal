@@ -43,8 +43,20 @@ Because the site is a static HTML page, you can instead deploy the `templates/ap
 ---
 
 If you want, I can now:
-- Trim `requirements.txt` to essentials (Django, gunicorn, whitenoise, dj-database-url) to speed up builds.
-- Add a small GitHub Actions workflow to run migrations after deploy.
-- Create a `public/` static export for Netlify/Vercel.
+- Trim `requirements.txt` to essentials (Django, gunicorn, whitenoise, dj-database-url) to speed up builds. ✅
+- Add a small GitHub Actions workflow to run checks & collectstatic on push. ✅
+- Add a `render.yaml` manifest so Render can create the Web Service and Postgres DB from the repo. ✅
 
-Tell me which follow-up tasks you'd like me to do next.
+---
+
+Render manifest (`render.yaml`)
+
+A sample `render.yaml` has been added to the repo. Edit the `repository` value to point to your GitHub repo (e.g., `https://github.com/your-user/your-repo`) and push the file. Render will detect the manifest and can create the required services automatically.
+
+---
+
+Next steps I can take for you:
+1) Create the Render Web Service and add environment variables on Render (I will need access/invite to your Render account), then run migrations there.
+2) If you prefer not to grant access, I can guide you step-by-step in the Render dashboard to connect the repo, set env vars (`SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS`, `DATABASE_URL`), and create the managed Postgres DB.
+
+Which would you like me to do next?
