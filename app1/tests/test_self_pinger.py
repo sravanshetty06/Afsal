@@ -1,5 +1,5 @@
-from django.test import TestCase
 from unittest import mock
+from django.test import TestCase
 from django.conf import settings
 
 from app1 import self_pinger
