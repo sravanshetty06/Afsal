@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# SQLite
+db.sqlite3
+*.sqlite3
+
+# Environments
+.env
+.venv/
+venv/
+.env.local
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Django
+/staticfiles/
+media/
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage
+htmlcov/
+.coverage
+
+# Secrets and credentials
+.env
+secrets.json
